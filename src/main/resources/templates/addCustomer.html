@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>New Customer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="panel panel-primary">
+
+
+  <div class="panel-heading">Create New Customer</div>
+  <div class="panel-body">
+    <p>We value non customers less than current customers.
+      If you are not a customer and want to feel the warm embrace of being valued then please add yourself as a customer</p>
+  </div>
+
+  <form th:action="@{/newCustomer}" th:object="${customer}" method="post">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" th:field="*{firstName}" id="firstName" placeholder="John"/>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" th:field="*{lastName}" id="lastName" placeholder="Doe"/>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</body>
+</html>
